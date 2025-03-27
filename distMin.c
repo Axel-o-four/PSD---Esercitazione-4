@@ -21,8 +21,8 @@ int main(){
     scanf("%f", &x);
     printf("Inserire l'ordinata del punto: ");
     scanf("%f", &y);
-    printf("\n");
     punti[i]=creaPunto(x, y);
+    printf("Realizzato con successo il punto %d\n\n", i);
     n++;
     i++;
     if(n>=2){
