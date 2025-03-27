@@ -1,0 +1,11 @@
+make dist_min:
+  gcc punto.o dist_min.o -o dist_min.exe
+
+punto.o:
+  gcc -c punto.c
+
+dist_min.o:
+  gcc -c distmin.c
+
+make clean:
+  rm -f punto.o dist_min.o dist_min.exe
