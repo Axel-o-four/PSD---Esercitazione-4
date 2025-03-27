@@ -13,6 +13,10 @@ struct punto{
 Punto creaPunto(float x, float y){
   Punto p;
   p=(Punto)calloc(1,sizeof(struct punto));
+  if(p==NULL){
+    fprintf(stderr, "Impossibile allocare la memoria per il punto!");
+    exit(EXIT_FAILURE);
+  }
   p->ascissa=x;
   p->ordinata=y;
   return p;
@@ -50,7 +54,7 @@ Punto centroide(Punto *punti, int n){
     y_media+=punti[i]->ordinata;
   }
   Punto centroide;
-  centroide=(Punto)calloc(1,sizeof(punto));
+  centroide=(Punto)malloc(sizeof(struct punto));
   centroide->ascissa=(x_media/n);
   centroide->ordinata=(y_media/n);
   return centroide;

@@ -1,7 +1,7 @@
-distMin:
+distMin: punto.o distMin.o
 	gcc punto.o distMin.o -o distMin.exe
 
-distMax:
+distMax: punto.o distMax.o
 	gcc punto.o distMax.o -o distMax.exe
 
 punto.o:
