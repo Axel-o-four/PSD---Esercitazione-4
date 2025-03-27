@@ -59,3 +59,48 @@ Punto centroide(Punto *punti, int n){
   centroide->ordinata=(y_media/n);
   return centroide;
 }
+
+//Funzione per riempire una sequenza di punti data in input
+void riempiPunti(Punto *s, int n){
+  float x, y;
+  for(int i=0; i<n; i++){
+    printf("\nInserire l'ascissa del punto %d: ", i);
+    scanf("%f", &x);
+    printf("Inserire l'ordinata del punto %d: ", i);
+    scanf("%f", &y);
+    s[i]=creaPunto(x, y);
+  }
+}
+
+//Funzione per ricercare le coppie di punti con distanza minore di un certo d
+int cercaDistanzaMinore(Punto *s, int n, float d){
+  float d_punti;
+  int n_coppie;
+  for(int j=0; j<(n-1); j++){
+    for(int i=j+1; i<n; i++){
+      d_punti=distanza(s[j], s[i]);
+      if(d_punti<d){
+        n_coppie++;
+      }
+    }
+  }
+  return n_coppie;
+}
+
+//Funzione per ricercare la distanza massima tra le coppie di una sequenza di punti
+int cercaDistanzaMassima(Punto *s, int n){
+  float d_max, d_temp;
+  for(int j=0; j<(n-1); j++){
+    for(int i=j+1; i<n; i++){
+      if(j==0&&i==1){
+        d_max=distanza(s[j], s[i]);
+      }else{
+        d_temp=distanza(s[j], s[i]);
+        if(d_temp>d_max){
+          d_max=d_temp;
+        }
+      }
+    }
+  }
+  return d_max;
+}

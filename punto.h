@@ -10,3 +10,6 @@ float ordinata(Punto p);
 float distanza(Punto p1, Punto p2);
 void spostaPunto(Punto p, float dx, float dy);
 Punto centroide(Punto *punti, int n);
+void riempiPunti(Punto *s, int n);
+int cercaDistanzaMinore(Punto *s, int n, float d);
+int cercaDistanzaMassima(Punto *s, int n);
